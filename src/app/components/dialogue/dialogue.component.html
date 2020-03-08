@@ -1,0 +1,10 @@
+
+
+<h2>Howdy, stranger. Haven't seen your face around here before. What's your name?</h2>
+<br>
+<input   #userName>
+<button type="button" (click) = "onSubmit()">Submit</button>
+<br>
+<p *ngIf="inputValue !=='' ">Alright {{inputValue }}, what can I do you for?
+</p>
+<app-selectbeverage></app-selectbeverage>
