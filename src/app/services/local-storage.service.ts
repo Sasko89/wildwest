@@ -20,7 +20,18 @@ export class LocalStorageService {
 
   checkStorage(name:string){
 
-    this.storageName = name;
-    localStorage.getItem (this.storageName);
+    if(localStorage.getItem(name) === null){
+      this.storageName = "";
+    }
+    else {
+      this.storageName = localStorage.getItem(name);
+
+    }
   }
+
+  delUser() {
+    localStorage.clear();
+    location.reload();
+  }
+
 }

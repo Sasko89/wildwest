@@ -15,7 +15,7 @@ inputValue: string= "";
 
   ngOnInit(): void {
 
-    this.localStorage.checkStorage();
+    this.localStorage.checkStorage("name");
 
   }
 
@@ -26,5 +26,8 @@ inputValue: string= "";
     
   }
 
+  delUser() {
+    this.localStorage.delUser();
+  }
 
 }

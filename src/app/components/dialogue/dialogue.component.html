@@ -1,13 +1,25 @@
 
 
-<h2 *ngIf = "localStorage.storageName == ''">Howdy, stranger. Haven't seen your face around here before. What's your name?</h2>
-<h2 *ngIf = "localStorage.storageName !== ''">Hello again, {{localStorage.storageName }}! The usual?</h2>
-<br>
-<input  type="text"  #userName>
-<br>
-<button type="button" (click) = "onSubmit(userName.value)">Submit</button>
-<br>
-<p *ngIf="inputValue !=='' ">Alright {{ inputValue }}, what can I do you for?
-</p>
-<br>
-<app-selectbeverage></app-selectbeverage>
+<div *ngIf = "localStorage.storageName == ''"><h2>Howdy, stranger. Haven't seen your face around here before. What's your name?</h2>
+
+    <br>
+    <input  type="text"  #userName>
+    <br>
+    <button type="button" (click) = "onSubmit(userName.value)">Submit</button>
+</div>
+
+<div *ngIf = "localStorage.storageName !== ''">
+    <h2 >Hello again, {{localStorage.storageName }}! The usual?</h2>
+    <br>
+    <button type="button" (click) = "delUser()">I Was Never Here!</button>
+</div>
+<div *ngIf="inputValue !=='' ">
+    <br>
+    <p >Alright {{ inputValue }}, what can I do you for?
+    </p>
+    <br>
+</div>
+
+<div><app-selectbeverage></app-selectbeverage><p>
+    One , coming right up!
+</p></div>
