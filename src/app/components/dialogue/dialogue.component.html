@@ -1,10 +1,13 @@
 
 
-<h2>Howdy, stranger. Haven't seen your face around here before. What's your name?</h2>
+<h2 *ngIf = "localStorage.storageName == ''">Howdy, stranger. Haven't seen your face around here before. What's your name?</h2>
+<h2 *ngIf = "localStorage.storageName !== ''">Hello again, {{localStorage.storageName }}! The usual?</h2>
 <br>
-<input   #userName>
-<button type="button" (click) = "onSubmit()">Submit</button>
+<input  type="text"  #userName>
 <br>
-<p *ngIf="inputValue !=='' ">Alright {{inputValue }}, what can I do you for?
+<button type="button" (click) = "onSubmit(userName.value)">Submit</button>
+<br>
+<p *ngIf="inputValue !=='' ">Alright {{ inputValue }}, what can I do you for?
 </p>
+<br>
 <app-selectbeverage></app-selectbeverage>

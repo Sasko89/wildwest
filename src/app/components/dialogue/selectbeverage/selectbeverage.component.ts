@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
 
 @Component({
   selector: 'app-selectbeverage',
@@ -7,13 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SelectbeverageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private localStorage: LocalStorageService) { }
 
   ngOnInit(): void {
   }
 
-orderBeer(){
-console.log("funkar")
+orderBeer(beer:string){
+console.log(beer)
 
 }
 
